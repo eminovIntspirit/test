@@ -12,7 +12,7 @@ jobs:
         run: npm run build
   test:
     runs-on: ubuntu-latest
-    need: build
+    needs: build
     steps:
       # - name: Get repo code
         # uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
         run: npm run test
   deploy:
     runs-on: ubuntu-latest
-    need: test
+    needs: test
     steps:
       - name: Test app
         run: npm run test
