@@ -1,0 +1,16 @@
+name: Test React App
+on: push
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v3
+      - name: Install dependecies
+        run: npm ci
+      - name: Build app
+        run: npm run build
+      - name: Test app
+        run: npm run test
+      - name: Deploy app
+        run: echo deploy ...
